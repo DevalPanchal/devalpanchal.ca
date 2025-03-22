@@ -7,7 +7,7 @@ import ResumeFooter from "./components/ResumeFooter";
 
 export default function Contact() {
     return (
-        <main className="min-h-screen bg-[#0d0d0d] py-16">
+        <main className="min-h-screen bg-[#0d0d0d] py-16 overflow-x-hidden">
             <ContactHeader />
 
             <MainSection />

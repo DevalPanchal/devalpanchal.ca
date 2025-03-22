@@ -1,58 +1,66 @@
 "use client";
 import { ChevronDown, Menu, X } from "lucide-react";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
-
 
 export default function Navbar() {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
 	const [isWorkDropdownOpen, setIsWorkDropdownOpen] = useState(false);
-
 	const pathname = usePathname();
 
-	const handleWorkClick = (e: React.MouseEvent) => {
-		e.preventDefault();
-		setIsWorkDropdownOpen(!isWorkDropdownOpen);
+	// Close mobile menu when window resizes to desktop view
+	useEffect(() => {
+		const handleResize = () => {
+			if (window.innerWidth >= 768) {
+				setIsMenuOpen(false);
+			}
+		};
+
+		window.addEventListener("resize", handleResize);
+		return () => window.removeEventListener("resize", handleResize);
+	}, []);
+
+	// Modified to ensure mobile menu state persists when clicking links
+	const handleMobileMenuToggle = () => {
+		setIsMenuOpen(!isMenuOpen);
 	};
 
-	const getLinkClasses = (href: string) => `hover:text-white font-semibold transition-colors ${pathname === href ? "text-white" : "text-gray-500"}`;
+	const getLinkClasses = (href: any) =>
+		`hover:text-white font-semibold transition-colors ${
+			pathname === href ? "text-white" : "text-gray-500"
+		}`;
 
 	return (
-		<nav className="fixed w-full bg-black backdrop-blur-sm z-50">
-			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+		<nav className="fixed w-full bg-black backdrop-blur-sm z-50 overflow-hidden">
+			<div className="max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8">
 				<div className="flex justify-between h-16">
-					<div className="flex items-center"></div>
+					<div className="flex items-center">{/* Logo could go here */}</div>
 
-					{/* Desktop Navigation */}
-					<div className="hidden md:flex items-center space-x-8">
-						<Link href="/" className={getLinkClasses("/")}>Home</Link>
-						<Link href="/resume" className={getLinkClasses("/resume")}>Resume</Link>
-						{/* <div className="relative">
-							<button 
-								onClick={handleWorkClick} 
-								className={`flex items-center space-x-1 hover:text-white font-semibold transition-colors ${pathname.startsWith("/work") ? "text-white" : "text-gray-500"}`}
-							>
-								<span>Work</span>
-								<ChevronDown className="w-4 h-4" />
-							</button>
-							{isWorkDropdownOpen && (
-								<div className="absolute top-full right-0 mt-2 w-48 bg-background rounded-md shadow-lg py-1 border">
-									<a href="#projects" className="block px-4 py-2 text-sm hover:bg-secondary transition-colors" >Projects</a>
-									<a href="#experience"className="block px-4 py-2 text-sm hover:bg-secondary transition-colors">Experience</a>
-								</div>
-							)}
-						</div> */}
-						<Link href="/contact" className={getLinkClasses("/contact")}>Contact</Link>
+					{/* Desktop Navigation - Added responsive breakpoints */}
+					<div className="hidden md:flex items-center md:space-x-2 lg:space-x-6">
+						<Link href="/" className={getLinkClasses("/")}>
+							Home
+						</Link>
+						<Link href="/resume" className={getLinkClasses("/resume")}>
+							Resume
+						</Link>
+						<Link href="/contact" className={getLinkClasses("/contact")}>
+							Contact
+						</Link>
 					</div>
 
-					{/* Mobile menu button */}
+					{/* Mobile menu button - Fixed icon display */}
 					<div className="md:hidden flex items-center">
-						<button onClick={() => setIsMenuOpen(!isMenuOpen)} className="text-white hover:text-primary transition-colors">
+						<button
+							onClick={handleMobileMenuToggle}
+							className="text-white hover:text-primary transition-colors p-1"
+							aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+						>
 							{isMenuOpen ? (
-								<X className="w-6 h-6" />
+								<X className="w-5 h-5" />
 							) : (
-								<Menu className="w-6 h-6" />
+								<Menu className="w-5 h-5" />
 							)}
 						</button>
 					</div>
@@ -60,25 +68,35 @@ export default function Navbar() {
 			</div>
 
 			{/* Mobile Navigation */}
-			{isMenuOpen && (
-				<div className="md:hidden bg-background border-t">
-					<div className="px-2 pt-2 pb-3 space-y-1">
-						<a href="#" className="block px-3 py-2 text-white hover:bg-secondary rounded-md transition-colors">Home</a>
-						<a href="#" className="block px-3 py-2 text-white hover:bg-secondary rounded-md transition-colors">Resume</a>
-						{/* <button onClick={handleWorkClick} className="flex items-center w-full px-3 py-2 text-white hover:bg-secondary rounded-md transition-colors">
-							<span>Work</span>
-							<ChevronDown className="w-4 h-4 ml-2" />
-						</button>
-						{isWorkDropdownOpen && (
-							<div className="pl-6 space-y-1">
-								<a href="#projects" className="block px-3 py-2 text-white hover:bg-secondary rounded-md transition-colors">Projects</a>
-								<a href="#experience" className="block px-3 py-2 text-white hover:bg-secondary rounded-md transition-colors">Experience</a>
-							</div>
-						)} */}
-						<a href="#" className="block px-3 py-2 text-white hover:bg-secondary rounded-md transition-colors">Contact</a>
-					</div>
+			<div
+				className={`md:hidden bg-black border-t overflow-hidden transition-all duration-300 ease-in-out ${
+					isMenuOpen ? "max-h-60" : "max-h-0"
+				}`}
+			>
+				<div className="px-2 pt-2 pb-3 space-y-1">
+					<Link
+						href="/"
+						onClick={() => setIsMenuOpen(false)}
+						className="block px-3 py-2 text-white hover:bg-secondary rounded-md transition-colors"
+					>
+						Home
+					</Link>
+					<Link
+						href="/resume"
+						onClick={() => setIsMenuOpen(false)}
+						className="block px-3 py-2 text-white hover:bg-secondary rounded-md transition-colors"
+					>
+						Resume
+					</Link>
+					<Link
+						href="/contact"
+						onClick={() => setIsMenuOpen(false)}
+						className="block px-3 py-2 text-white hover:bg-secondary rounded-md transition-colors"
+					>
+						Contact
+					</Link>
 				</div>
-			)}
+			</div>
 		</nav>
 	);
 }

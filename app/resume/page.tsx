@@ -12,7 +12,7 @@ import Projects from "./components/Projects";
 
 export default function Resume() {
 	return (
-		<main className="min-h-screen bg-background py-16">
+		<main className="min-h-screen bg-background py-16 overflow-x-hidden">
 			<ResumeHeader />
 
 			<div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
