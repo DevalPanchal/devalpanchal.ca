@@ -97,7 +97,7 @@ export default function Experience() {
 											{/* Render bullet points */}
 											<ul className="list-disc list-inside space-y-1 mt-2 text-muted-foreground">
                       						  	{exp.descriptionBullets.map((bullet, i) => (
-                      						  	  	<li key={i}>{bullet}</li>
+                      						  	  	<li key={i} className="py-1">{bullet}</li>
                       						  	))}
                       						</ul>
 										</div>

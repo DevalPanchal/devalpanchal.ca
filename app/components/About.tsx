@@ -41,12 +41,9 @@ export default function About() {
 						animate={isBioInView ? "visible" : "hidden"}
 						variants={FramerAnimations.fadeIn}
 					>
-						I am driven by a passion for building meaningful and efficient web
-						applications that enhance user experiences. With over 5 years of
-						experience in full-stack development, I specialize in JavaScript,
-						TypeScript, React, Node.js, and modern web technologies. My work is
-						guided by a strong foundation in problem-solving, scalability, and
-						performance optimization.
+						I&apos;m a full-stack developer with over 5 years of experience building web applications that are not just functional, but genuinely enjoyable to use.
+						I enjoy working with Next.js, Node.js, Angular, SQL, and data-driven solutions, and I&apos;m always exploring new technologies to keep things modern and efficient.
+						Whether it’s boosting performance, scaling an app, or solving tough problems, I focus on building clean, reliable solutions that make a real difference for users.
 					</motion.p>
 
 					<motion.div
