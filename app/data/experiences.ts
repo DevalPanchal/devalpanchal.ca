@@ -8,8 +8,8 @@ export const experiences = [
 		descriptionBullets: [
 			"Develop and maintain Angular, C#, and SQL Server applications for both station-level and enterprise-wide use",
 			"Implement CI/CD pipelines using Azure DevOps to streamline deployment processes",
-			"Collaborate with cross-functional teams to design scalable front-end components and optimize back-end systems",
-			"Mentor junior developers and promote best coding practices across the organization",
+			"Develop reporting tools using SQL Server and PowerBI used at corporate-level for performance monitoring, regulatory compliance, and executive-decision making",
+			"Database owner of production database responsible for ensuring data integrity, performance tuning, implementing backup strategies, and managing role-based access control",
 		],
 		skills: [
 			{ title: "Angular", color: "#c3002f" },
