@@ -1,41 +1,74 @@
 export const skills = {
-    technical: [
-        "JavaScript",
+    mobile: [
+        "React Native",
+        "Expo",
+        "Expo Router",
+        "EAS Build & Submit",
+        "App Store Connect",
+        "TestFlight",
+        "NativeWind",
+        "RevenueCat",
+        "In-App Subscriptions",
+    ],
+    languages: [
         "TypeScript",
-        "React",
-        "Node.js",
-        "Next.js",
+        "JavaScript",
+        "C#",
         "Python",
         "SQL",
-        "AWS",
+        "HTML/CSS",
     ],
-    soft: [
-        "Leadership",
-        "Problem Solving",
-        "Communication",
-        "Team Management",
-        "Agile Methodologies",
+    frameworks: [
+        "React",
+        "React Native",
+        "Next.js",
+        "Angular",
+        "SvelteKit",
+        ".NET 8 / ASP.NET Core",
+        "Node.js",
+        "Express",
+    ],
+    data: [
+        "Zustand",
+        "RESTful APIs",
+        "Supabase",
+        "Firebase",
+        "PostgreSQL",
+        "SQL Server",
+        "Power BI",
+        "DAX",
+        "ETL Pipelines",
+        "OpenAI API",
+    ],
+    cloud: [
+        "Azure DevOps (CI/CD)",
+        "Google Cloud Platform",
+        "Docker",
+        "Git/GitHub",
+        "Supabase Edge Functions",
+    ],
+    testing: [
+        "Jest",
+        "Sentry",
+        "PostHog",
+        "XUnit",
     ],
 };
 
-export const education = [
-    {
-        degree: "Bachelor's of Computer Science (Hons.)",
-        school: "Ontario Tech University",
-        period: "",
-        description: "Specialization in Data Science. Graduated with Distinction.",
-    },
+export const skillCategories: { key: keyof typeof skills; label: string }[] = [
+    { key: "mobile", label: "Mobile" },
+    { key: "languages", label: "Languages" },
+    { key: "frameworks", label: "Frameworks & Libraries" },
+    { key: "data", label: "State & Data" },
+    { key: "cloud", label: "Cloud & DevOps" },
+    { key: "testing", label: "Testing & Monitoring" },
 ];
 
-export const certifications = [
+export const education = [
     {
-        name: "AWS Certified Solutions Architect",
-        issuer: "Amazon Web Services",
-        year: "2023",
-    },
-    {
-        name: "Professional Scrum Master I",
-        issuer: "Scrum.org",
-        year: "2022",
+        degree: "Bachelor of Science (Honours), Computer Science",
+        school: "Ontario Tech University",
+        period: "Apr 2024",
+        description: "Awards: President's List (2021–2024) · NSERC Research Award Recipient",
     },
 ];

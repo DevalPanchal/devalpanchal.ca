@@ -27,10 +27,14 @@ export default function Summary() {
                 animate={isTextInView ? "visible" : "hidden" }
                 variants={FramerAnimations.cardVariant}
             >
-				Senior Full Stack Developer with 5+ years of experience in building
-				scalable web applications. Specialized in React, Node.js, and cloud
-				technologies. Proven track record of leading teams and delivering
-				complex projects on time and within budget.
+				Software engineer with 5 years of full-stack development experience,
+				currently leading a two-person team building enterprise applications at a
+				regulated energy utility, and the solo developer of a live iOS app on the
+				App Store. Builds cross-platform mobile in React Native and TypeScript and
+				owns features end-to-end — architecture, implementation, CI/CD, store
+				release, and post-launch iteration. Equally comfortable on the backend,
+				from RESTful API and real-time data integration through production
+				database ownership.
 			</motion.p>
 		</section>
 	);

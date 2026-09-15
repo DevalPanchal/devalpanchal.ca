@@ -41,7 +41,7 @@ export default function Education() {
 								<span>{edu.period}</span>
 							</div>
 						</div>
-						<p className="text-muted-foreground">{edu.description}</p>
+						<p className="text-muted-foreground italic">{edu.description}</p>
 					</div>
 				))}
 			</motion.div>

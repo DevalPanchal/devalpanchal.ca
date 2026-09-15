@@ -1,4 +1,4 @@
-import { Calendar } from "lucide-react";
+import { Calendar, MapPin } from "lucide-react";
 import React from "react";
 import { useInView } from "framer-motion";
 import { motion } from "framer-motion";
@@ -21,7 +21,7 @@ export default function Experience() {
                 animate={isTitleInView ? "visible" : "hidden" }
                 variants={FramerAnimations.fadeIn}
             >
-                Experience
+                Professional Experience
             </motion.h2>
 			<div className="space-y-8">
 				{experiences.map((exp, index) => {
@@ -31,6 +31,7 @@ export default function Experience() {
 						<motion.div 
 							key={index}
 							ref={experienceRef}
+							className="space-y-2"
 							initial="hidden"
 							animate={"visible"}
 							variants={ isEven ? FramerAnimations.slideInFromLeft : FramerAnimations.slideInFromRight}
@@ -39,11 +40,27 @@ export default function Experience() {
 								<h3 className="text-lg font-medium">{exp.position}</h3>
 								<p className="text-primary">{exp.company}</p>
 							</div>
-							<div className="flex items-center gap-2 text-sm text-muted-foreground">
-								<Calendar className="w-4 h-4" />
-								<span>{exp.period}</span>
+							<div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground">
+								<span className="flex items-center gap-2">
+									<Calendar className="w-4 h-4" />
+									{exp.period}
+								</span>
+								<span className="flex items-center gap-2">
+									<MapPin className="w-4 h-4" />
+									{exp.location}
+								</span>
 							</div>
-							<ul className="list-disc list-inside text-muted-foreground space-y-2">
+							<div className="flex flex-wrap gap-2 py-1">
+								{exp.skills.map((skill) => (
+									<span
+										key={skill.title}
+										className="bg-secondary px-3 py-1 rounded-full text-sm"
+									>
+										{skill.title}
+									</span>
+								))}
+							</div>
+							<ul className="list-disc list-outside pl-5 text-muted-foreground space-y-2">
 								{exp.descriptionBullets.map((bullet, i) => (
 									<li key={i}>{ bullet }</li>
 								))}
