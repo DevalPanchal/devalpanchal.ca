@@ -27,14 +27,13 @@ export default function Summary() {
                 animate={isTextInView ? "visible" : "hidden" }
                 variants={FramerAnimations.cardVariant}
             >
-				Software engineer with 5 years of full-stack development experience,
-				currently leading a two-person team building enterprise applications at a
-				regulated energy utility, and the solo developer of a live iOS app on the
-				App Store. Builds cross-platform mobile in React Native and TypeScript and
-				owns features end-to-end — architecture, implementation, CI/CD, store
-				release, and post-launch iteration. Equally comfortable on the backend,
-				from RESTful API and real-time data integration through production
-				database ownership.
+				Software developer with experience across backend platforms, data
+				engineering, and mobile. At Ontario Power Generation I build FastAPI and
+				.NET applications that have cut thousands of overtime hours and over $1M a
+				year in cost, and run the Azure DevOps pipelines that took releases from 3
+				hours to 10 minutes. Previously a data engineer and a research developer
+				with work published at ACM UIST and ACL BEA, and the solo developer of
+				Virtus, a 5-star habit-tracking app on the App Store.
 			</motion.p>
 		</section>
 	);

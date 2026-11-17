@@ -23,7 +23,7 @@ export default function Projects() {
                 Projects
             </motion.h2>
 			<div ref={projectsRef} className="space-y-8">
-				{projects.map((proj, index) => {
+				{projects.filter((p) => !p.screens).map((proj, index) => {
 					const isEven = index % 2 === 0;
 
 					return (

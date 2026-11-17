@@ -2,6 +2,7 @@
 import React from "react";
 import { motion, useInView } from "framer-motion";
 import { FramerAnimations } from "@/lib/FramerMotion";
+import ExperienceCounter from "@/app/components/ExperienceCounter";
 // Import as many icons as you need from Lucide
 import {
 	Briefcase,
@@ -76,7 +77,9 @@ export default function MainSection() {
                 >
 					<Calendar className="w-6 h-6" />
 					<h2 className="text-4xl pt-5 font-medium">Experience</h2>
-					<p className="text-muted-foreground">5+ years in development</p>
+					<p className="text-muted-foreground">
+						<ExperienceCounter decimals={6} className="text-white font-mono" /> years in development
+					</p>
 				</motion.div>
 
 				{/* Freelance */}
@@ -141,7 +144,7 @@ export default function MainSection() {
                 >
 					<Code className="w-6 h-6" />
 					<h2 className="text-4xl pt-5 font-medium">Specialization</h2>
-					<p className="text-muted-foreground">React, NextJS, Tailwind CSS</p>
+					<p className="text-muted-foreground">FastAPI, .NET, React Native</p>
 				</motion.div>
 
 				{/* Availability */}

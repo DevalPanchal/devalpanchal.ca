@@ -19,6 +19,8 @@ export default function Footer() {
 						<Link
 							href={LinkedInUrl}
 							target="_blank"
+							rel="noopener noreferrer"
+							aria-label="LinkedIn"
 							style={{ "--hover-color": Colors.LinkedInColorHex } as React.CSSProperties}
 							className="bg-background hover:bg-[var(--hover-color)] hover:text-white p-3 rounded-full transition-colors"
 						>
@@ -27,6 +29,8 @@ export default function Footer() {
 						<Link
 							href={GithubUrl}
 							target="_blank"
+							rel="noopener noreferrer"
+							aria-label="GitHub"
 							style={{ "--hover-color": Colors.GitHubColorHex } as React.CSSProperties}
 							className="bg-background hover:bg-[var(--hover-color)] hover:text-white p-3 rounded-full transition-colors"
 						>
@@ -35,6 +39,8 @@ export default function Footer() {
 						<Link
 							href={`mailto:${EmailUrl}`}
 							target="_blank"
+							rel="noopener noreferrer"
+							aria-label="Email"
 							style={{ "--hover-color": Colors.EmailColorHex } as React.CSSProperties}
 							className="bg-background hover:bg-[var(--hover-color)] hover:text-white p-3 rounded-full transition-colors"
 						>

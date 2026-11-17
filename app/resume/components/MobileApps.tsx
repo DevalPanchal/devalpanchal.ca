@@ -35,7 +35,14 @@ export default function MobileApps() {
 							<h3 className="text-lg font-medium">{app.title}</h3>
 							<p className="text-primary">{app.role}</p>
 						</div>
-						<p className="text-sm text-muted-foreground">{app.status}</p>
+						<a
+							href={app.url}
+							target="_blank"
+							rel="noopener noreferrer"
+							className="inline-block text-sm text-muted-foreground underline-offset-4 hover:text-primary hover:underline"
+						>
+							{app.status} ↗
+						</a>
 						<div className="flex flex-wrap gap-2 py-1">
 							{app.technologies.map((tech) => (
 								<span

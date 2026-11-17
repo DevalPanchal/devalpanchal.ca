@@ -19,7 +19,7 @@ export default function Hero() {
 					Hi, I&apos;m <span className="text-primary">Deval Panchal</span>
 				</h1>
 				<p className="text-xl md:text-2xl mb-8 animate-fade-in-delay">
-					Software Developer & Creative Problem Solver
+					Software Developer · Backend, Data &amp; Mobile
 				</p>
 				<a
 					href="#about"
@@ -35,7 +35,7 @@ export default function Hero() {
 					animate={isTitleInView ? "visible" : "hidden"}
 					variants={FramerAnimations.slideInFromBottom}
 				>
-					Welcome to my digital portfolio. This portfolio showcases my journey as a software developer - melding innovative design with robust code to solve real-world challenges.
+					I build FastAPI and .NET platforms at Ontario Power Generation, and I shipped Virtus, a habit-tracking app on the App Store.
 				</motion.p>
 			</div>
 

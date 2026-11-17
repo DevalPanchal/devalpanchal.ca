@@ -42,6 +42,9 @@ export default function Navbar() {
 						<Link href="/" className={getLinkClasses("/")}>
 							Home
 						</Link>
+						<Link href="/#virtus" className={getLinkClasses("/#virtus")}>
+							Virtus
+						</Link>
 						<Link href="/resume" className={getLinkClasses("/resume")}>
 							Resume
 						</Link>
@@ -80,6 +83,13 @@ export default function Navbar() {
 						className="block px-3 py-2 text-white hover:bg-secondary rounded-md transition-colors"
 					>
 						Home
+					</Link>
+					<Link
+						href="/#virtus"
+						onClick={() => setIsMenuOpen(false)}
+						className="block px-3 py-2 text-white hover:bg-secondary rounded-md transition-colors"
+					>
+						Virtus
 					</Link>
 					<Link
 						href="/resume"

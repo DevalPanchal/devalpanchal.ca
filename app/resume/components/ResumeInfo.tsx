@@ -29,7 +29,7 @@ export default function ResumeInfo() {
                 initial="hidden"
                 animate={isSubTitleInView ? "visible" : "hidden" }
                 variants={FramerAnimations.cardVariant}
-            >Mobile &amp; Full-Stack Software Engineer
+            >Software Developer · Backend, Data &amp; Mobile
             </motion.p>
 			<motion.div
                 ref={linksRef}

@@ -1,67 +1,31 @@
 export const skills = {
-    mobile: [
-        "React Native",
-        "Expo",
-        "Expo Router",
-        "EAS Build & Submit",
-        "App Store Connect",
-        "TestFlight",
-        "NativeWind",
-        "RevenueCat",
-        "In-App Subscriptions",
-    ],
-    languages: [
-        "TypeScript",
-        "JavaScript",
-        "C#",
-        "Python",
-        "SQL",
-        "HTML/CSS",
-    ],
-    frameworks: [
-        "React",
-        "React Native",
-        "Next.js",
-        "Angular",
-        "SvelteKit",
-        ".NET 8 / ASP.NET Core",
+    languages: ["Python", "TypeScript", "JavaScript", "C#", "SQL"],
+    backend: [
+        "FastAPI",
+        ".NET / ASP.NET Core",
         "Node.js",
         "Express",
+        "REST APIs",
+        "Azure AD",
     ],
-    data: [
-        "Zustand",
-        "RESTful APIs",
-        "Supabase",
-        "Firebase",
-        "PostgreSQL",
-        "SQL Server",
-        "Power BI",
-        "DAX",
-        "ETL Pipelines",
-        "OpenAI API",
-    ],
-    cloud: [
-        "Azure DevOps (CI/CD)",
-        "Google Cloud Platform",
+    frontend: ["React", "Next.js", "Angular", "React Native"],
+    data: ["PostgreSQL", "SQL Server", "MongoDB", "Apache Spark"],
+    infra: [
         "Docker",
+        "Kubernetes",
+        "Terraform",
+        "Azure DevOps",
+        "CI/CD",
         "Git/GitHub",
-        "Supabase Edge Functions",
-    ],
-    testing: [
-        "Jest",
-        "Sentry",
-        "PostHog",
-        "XUnit",
     ],
 };
 
 export const skillCategories: { key: keyof typeof skills; label: string }[] = [
-    { key: "mobile", label: "Mobile" },
     { key: "languages", label: "Languages" },
-    { key: "frameworks", label: "Frameworks & Libraries" },
-    { key: "data", label: "State & Data" },
-    { key: "cloud", label: "Cloud & DevOps" },
-    { key: "testing", label: "Testing & Monitoring" },
+    { key: "backend", label: "Backend" },
+    { key: "frontend", label: "Frontend" },
+    { key: "data", label: "Databases & Data" },
+    { key: "infra", label: "Infrastructure & DevOps" },
 ];
 
 export const education = [
@@ -69,6 +33,17 @@ export const education = [
         degree: "Bachelor of Science (Honours), Computer Science",
         school: "Ontario Tech University",
         period: "Apr 2024",
-        description: "Awards: President's List (2021–2024) · NSERC Research Award Recipient",
+        description: "Graduated with Distinction · President's List (2021–2024)",
+    },
+];
+
+export const awards = [
+    {
+        title: "Chief Nuclear Officer (CNO) Recognition Award",
+        issuer: "Ontario Power Generation",
+    },
+    {
+        title: "NSERC Research Award",
+        issuer: "Natural Sciences and Engineering Research Council of Canada",
     },
 ];

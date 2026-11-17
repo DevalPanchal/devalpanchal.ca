@@ -1,5 +1,8 @@
 import { BrainCircuit, Atom, Lightbulb, CloudLightning } from "lucide-react";
 
+// Start of professional experience — used by the live experience counter.
+export const CAREER_START = new Date("2021-05-01T00:00:00-04:00");
+
 export const experiences = [
 	{
 		company: "Ontario Power Generation",
@@ -7,76 +10,76 @@ export const experiences = [
 		period: "Aug 2024 - Present",
 		location: "Oshawa, ON",
 		descriptionBullets: [
-			"Lead a development team owning enterprise platforms within a ~$600K application portfolio in the enterprise project applications group, serving both station and corporate users",
-			"Designed and delivered an automated workflow in the project management platform that eliminated manual overtime processing, enabling approximately $300K in annual savings",
-			"Architect and develop Angular 18 and .NET 10 applications following Clean Architecture and CQRS patterns, integrating RESTful APIs and Azure AD authentication, with CI/CD pipelines in Azure DevOps automating build, test, and deployment",
-			"Develop reporting tools in SQL Server and Power BI used at the corporate level for performance monitoring, regulatory compliance reporting, and executive decision-making across the project portfolio",
-			"Serve as production database owner — accountable for data integrity, query performance tuning, backup and recovery strategy, and role-based access control across all enterprise project applications",
-			"Partner directly with business stakeholders to scope requirements and translate them into delivered features, running the work from intake through release without a dedicated product or QA layer",
+			"Decreased 3,000 overtime hours (~$300K/yr) enterprise-wide by engineering Project Management Application, a FastAPI platform that auto-generates 20+ senior-manager and 4+ VP-level reports across 3 organizations from JSON documents in NoSQL blob storage",
+			"Eliminated $500K in legacy licensing and saved ~$700K/yr in overtime by engineering Project Workbench, a project-portfolio tool delivered end to end from stakeholder requirements to production release",
+			"Optimized release time from 3 hours to 10 minutes by designing Azure DevOps CI/CD pipelines that automate testing, PR guarding, and deployment, running on a Docker/Kubernetes platform",
+			"Orchestrated 1,000+ hours of backlog work to completion, earning the Chief Nuclear Officer (CNO) Recognition Award, by identifying and defining key work items for teammates to pick up, while owning production SQL Server databases and .NET services",
 		],
 		skills: [
-			{ title: "Angular", color: "#c3002f" },
+			{ title: "FastAPI", color: "#009688" },
 			{ title: ".NET", color: "#512BD4" },
-			{ title: "C#", color: "#9b4993" },
 			{ title: "SQL Server", color: "#CC2927" },
 			{ title: "Azure DevOps", color: "#0078D7" },
+			{ title: "Kubernetes", color: "#326CE5" },
 		],
-        centerIcon: Atom,
-        centerIconColor: '#66CC00'
+		centerIcon: Atom,
+		centerIconColor: "#66CC00",
 	},
 	{
 		company: "Ontario Tech University",
 		position: "Software Developer, Research Fellowship",
 		period: "May 2023 - Oct 2024",
-		location: "Oshawa, ON",
+		location: "Toronto, ON",
 		descriptionBullets: [
-			"Collaborated with a Ph.D. candidate on AI-driven language-learning methodologies, designing and building 2 experimental models evaluated by 30+ participants",
-			"Led data collection and user studies with 120+ participants across 3 demographics, measuring a 25% improvement in vocabulary retention",
+			"Delivered LingoComics and LangEye, 2 AI-driven learning tools evaluated by 30+ study participants, by hardening experimental AI prototypes into production-style, containerized Node.js/Express REST APIs",
+			"Enabled a 120+ participant study showing a 25% improvement in vocabulary retention by engineering the PostgreSQL schemas, migrations, and MongoDB storage that powered the study data",
+			"Engineered LingoComics, a full-stack TypeScript app where learners co-author stories, turning structured inputs into text and comic-style illustrations through a multi-stage GPT-4-turbo and DALL-E 3 pipeline",
 		],
 		skills: [
-			{ title: "React", color: "#61DAFB" },
+			{ title: "TypeScript", color: "#3178C6" },
 			{ title: "Node.js", color: "#339933" },
-			{ title: "Express", color: "#000000" },
 			{ title: "PostgreSQL", color: "#336791" },
+			{ title: "MongoDB", color: "#47A248" },
 			{ title: "Docker", color: "#2496ED" },
 		],
-        centerIcon: BrainCircuit,
-        centerIconColor: '#E75D2A'
+		centerIcon: BrainCircuit,
+		centerIconColor: "#E75D2A",
 	},
 	{
 		company: "Ontario Power Generation",
-		position: "Data Analyst",
+		position: "Data Engineer",
 		period: "May 2022 - Sep 2023",
-		location: "Oshawa, ON",
+		location: "Toronto, ON",
 		descriptionBullets: [
-			"Optimized SQL queries and managed ETL processes, achieving up to 98% runtime improvement on data retrieval",
-			"Built and scheduled stored procedures syncing 5+ dashboards processing 50,000+ data points, and led data modelling and architecture design for scalable reporting projects",
+			"Reduced data retrieval runtime from 2 hr 57 min to ~2.5 min (98%) by re-engineering SQL Server queries and ETL pipelines, making the reports and dashboards built on top of them dramatically faster",
+			"Eliminated 35 hours of weekly manual spreadsheet work behind 5+ production dashboards by building Python ETL scripts and scheduled stored procedures that aggregate millions of records automatically",
+			"Powered senior-leadership reporting by designing the SQL Server data models behind it and partitioning 10 GB (~15M records) of asset-management data with Apache Spark for processing at scale",
 		],
 		skills: [
 			{ title: "Python", color: "#3776AB" },
 			{ title: "SQL Server", color: "#CC2927" },
-			{ title: "Power BI", color: "#F2C811" },
-			{ title: "Power Apps", color: "#742774" },
+			{ title: "Apache Spark", color: "#E25A1C" },
+			{ title: "ETL", color: "#0891b2" },
 		],
-        centerIcon: CloudLightning,
-        centerIconColor: '#66CC00'
+		centerIcon: CloudLightning,
+		centerIconColor: "#66CC00",
 	},
 	{
-		company: "Ontario Tech University",
+		company: "Vialab",
 		position: "Full-Stack Developer",
 		period: "May 2021 - Apr 2022",
-		location: "Oshawa, ON",
+		location: "Toronto, ON",
 		descriptionBullets: [
-			"Built an augmented reality mobile application for language learning in collaboration with a research professor and graduate student, taking it from concept through a working build used in study sessions",
-			"Ran A/B testing sessions comparing AR-based language learning against a control method, administering the sessions and collecting the effectiveness data the research was based on",
+			"Earned a ~8.7/10 usability rating from 20 learners by engineering LangEye, a 4-language mobile app that turns photos of real-world objects into vocabulary lessons via Google Cloud Vision, an LLM, translation, and text-to-speech",
+			"Protected study sessions from backend failures by monitoring services and usage in Grafana, catching issues before they ever reached participants",
 		],
 		skills: [
 			{ title: "React Native", color: "#61DAFB" },
-			{ title: "Expo", color: "#000020" },
-			{ title: "Augmented Reality", color: "#b070d9" },
-			{ title: "A/B Testing", color: "#0891b2" },
+			{ title: "Google Cloud Vision", color: "#4285F4" },
+			{ title: "LLMs", color: "#b070d9" },
+			{ title: "Grafana", color: "#F46800" },
 		],
-        centerIcon: Lightbulb,
-        centerIconColor: '#F2C811'
+		centerIcon: Lightbulb,
+		centerIconColor: "#F2C811",
 	},
 ];

@@ -1,4 +1,4 @@
-import { ExternalLink, Github } from "lucide-react";
+import { ArrowDown, ExternalLink, Github } from "lucide-react";
 import React from "react";
 import { projects } from "../data/projects";
 import Image from "next/image";
@@ -36,15 +36,40 @@ export default function Projects() {
 								animate={isCardInView ? "visible": "hidden"}
 								variants={FramerAnimations.cardVariant}
 							>
-								<div className="aspect-video overflow-hidden">
-									<Image 
-										width={10}
-										height={10}
-										src={project.image}
-										alt={project.title}
-										className="object-cover w-full h-full group-hover:scale-110 transition-transform duration-500"
-									/>
-								</div>
+								{project.screens ? (
+									<div
+										className="relative aspect-video overflow-hidden"
+										style={{ background: "radial-gradient(ellipse at 50% 110%, #2dd17a55 0%, #050706 65%)" }}
+									>
+										<div className="absolute inset-x-0 top-[14%] flex justify-center gap-3 sm:gap-4 transition-transform duration-500 group-hover:-translate-y-3">
+											{project.screens.map((screen, i) => (
+												<div
+													key={screen.src}
+													className={`w-[26%] shrink-0 rounded-[1.4rem] p-[4px] shadow-[0_20px_40px_-15px_rgba(0,0,0,0.9)] ${i === 1 ? "-mt-[6%]" : ""}`}
+													style={{ background: "linear-gradient(160deg, #2a302d 0%, #0d100e 45%, #1c2320 100%)" }}
+												>
+													<Image
+														width={555}
+														height={1200}
+														src={screen.src}
+														alt={screen.alt}
+														className="block h-auto w-full rounded-[1.2rem]"
+													/>
+												</div>
+											))}
+										</div>
+									</div>
+								) : (
+									<div className="aspect-video overflow-hidden">
+										<Image
+											width={1280}
+											height={720}
+											src={project.image}
+											alt={project.title}
+											className="object-cover w-full h-full group-hover:scale-110 transition-transform duration-500"
+										/>
+									</div>
+								)}
 								<div className="p-6">
 									<h3 className="text-xl font-semibold mb-2">{project.title}</h3>
 									<p className="text-muted-foreground mb-4">
@@ -61,22 +86,35 @@ export default function Projects() {
 										))}
 									</div>
 									<div className="flex gap-4">
-										<Link 
-											href={project.github} 
-											target="_blank" 
-											style={{ "--hover-color": Colors.GitHubColorHex } as React.CSSProperties}
-											className="flex items-center gap-2 text-[var(--hover-color)] hover:bg-[var(--hover-color)] hover:text-white rounded-lg px-2 py-2 transition-colors"
-										>
-											<Github className="w-4 h-4" />
-											<span>Code</span>
-										</Link>
+										{project.github && (
+											<Link
+												href={project.github}
+												target="_blank"
+												rel="noopener noreferrer"
+												style={{ "--hover-color": Colors.GitHubColorHex } as React.CSSProperties}
+												className="flex items-center gap-2 text-[var(--hover-color)] hover:bg-[var(--hover-color)] hover:text-white rounded-lg px-2 py-2 transition-colors"
+											>
+												<Github className="w-4 h-4" />
+												<span>Code</span>
+											</Link>
+										)}
+										{project.caseStudy && (
+											<a
+												href={project.caseStudy}
+												className="flex items-center gap-2 text-foreground hover:bg-foreground hover:text-background rounded-lg px-2 py-2 transition-colors"
+											>
+												<ArrowDown className="w-4 h-4" aria-hidden="true" />
+												<span>Case study</span>
+											</a>
+										)}
 										<Link 
 											href={project.demo} 
 											target="_blank" 
+											rel="noopener noreferrer"
 											className="flex items-center gap-2 text-primary hover:bg-primary hover:text-white rounded-lg px-2 py-2 transition-colors"
 										>
 											<ExternalLink  className="w-4 h-4" />
-											<span>Demo</span>
+											<span>{project.demoLabel ?? "Demo"}</span>
 										</Link>
 									</div>
 								</div>

@@ -8,6 +8,8 @@ import Experience from "./components/Experience";
 import Education from "./components/Education";
 import MobileApps from "./components/MobileApps";
 import Projects from "./components/Projects";
+import Publications from "./components/Publications";
+import Awards from "./components/Awards";
 
 
 export default function Resume() {
@@ -32,6 +34,12 @@ export default function Resume() {
 
 					{/* Mobile Applications */}
 					<MobileApps />
+
+					{/* Publications */}
+					<Publications />
+
+					{/* Awards */}
+					<Awards />
 
 					{/* Education */}
 					<Education />
